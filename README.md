@@ -94,4 +94,6 @@ Este proyecto me tomó más tiempo del que tenía contemplado. Durante la fase d
 
 Me encontré con varios errores que me hicieron darme cuenta de que CloudFront no era una buena opción para este tipo de arquitectura. Generar el script de user data de EC2 también fue un desafió aparte, había que ejecutar todo de forma precisa y tener en cuenta las necesidades de Docker, Jenkins, Terraform, rutas y permisos, entre otros, para que el ambiente levantara sin errores y sin tener que ajustar nada manualmente después del despliegue del ambiente.  
 
+Una vez el ambiente se encontraba provisionado, generar la automatización fue una tarea trivial. Ya en esta etapa se puede automatizar cualquier despliegue de infraestructura en cuestión de minutos. Se requiere simplemente generar un Job en Jenkins que responda al Webhook de Github cuando ocurra un commit en el branch que especifiquemos. El job va a trabajar sobre la lógica del Jenkinsfile configurado en el repositorio.
+
 Finalmente, el proyecto presentado cumple con los objetivos de automatización, seguridad y estabilidad necesarios para un entorno productivo DevOps.
