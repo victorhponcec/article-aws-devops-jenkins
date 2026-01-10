@@ -92,4 +92,6 @@ Ejecutar Jenkins en infraestructura propia permite tener control total del flujo
 
 Este proyecto me tomó más tiempo del que tenía contemplado. Durante la fase de diseño me di cuenta de que iba a necesitar el uso de contenedores para generar una arquitectura de trabajo inmutable, capaz de levantarse nuevamente en minutos en caso de fallas o corrupción del entorno.
 
-Me encontré con varios errores que me hicieron darme cuenta de que CloudFront no era una buena opción para este tipo de arquitectura. Finalmente, el proyecto presentado cumple con los objetivos de automatización, seguridad y estabilidad necesarios para un entorno productivo DevOps.
+Me encontré con varios errores que me hicieron darme cuenta de que CloudFront no era una buena opción para este tipo de arquitectura. Generar el script de user data de EC2 también fue un desafió aparte, había que ejecutar todo de forma precisa y tener en cuenta las necesidades de Docker, Jenkins, Terraform, rutas y permisos, entre otros, para que el ambiente levantara sin errores y sin tener que ajustar nada manualmente después del despliegue del ambiente.  
+
+Finalmente, el proyecto presentado cumple con los objetivos de automatización, seguridad y estabilidad necesarios para un entorno productivo DevOps.
