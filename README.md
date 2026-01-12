@@ -76,6 +76,8 @@ En este proyecto diseñé una arquitectura en AWS para sostener un ecosistema en
 
 **Subnet privada:** el cómputo se ejecuta dentro de una subnet privada.
 
+**AWS Systems Manager Session Manager:** Ingreso a la instancia EC2 usando credenciales temporales de AWS, sin SSH. 
+
 ## 5. Beneficios:
 
 Ejecutar Jenkins en infraestructura propia permite tener control total del flujo de CI/CD, además de opciones de automatización prácticamente ilimitadas, a diferencia de soluciones administradas como GitHub Actions o Terraform Cloud.
@@ -92,7 +94,7 @@ Ejecutar Jenkins en infraestructura propia permite tener control total del flujo
 
 Este proyecto me tomó más tiempo del que tenía contemplado. Durante la fase de diseño me di cuenta de que iba a necesitar el uso de contenedores para generar una arquitectura de trabajo inmutable, capaz de levantarse nuevamente en minutos en caso de fallas o corrupción del entorno.
 
-Me encontré con varios errores que me hicieron darme cuenta de que CloudFront no era una buena opción para este tipo de arquitectura. Generar el script de user data de EC2 también fue un desafió aparte, había que ejecutar todo de forma precisa y tener en cuenta las necesidades de Docker, Jenkins, Terraform, rutas y permisos, entre otros, para que el ambiente levantara sin errores y sin tener que ajustar nada manualmente después del despliegue del ambiente.  
+Me encontré con varios errores que me hicieron darme cuenta de que CloudFront no era una buena opción para este tipo de arquitectura. Generar el script de user data de EC2 también fue un desafió aparte, había que ejecutar todo de forma precisa y tener en cuenta las necesidades de Docker, Jenkins, Terraform, rutas y permisos, entre otros, para que el ambiente levantara sin errores y evitar tener que hacer ajustes manuales después del despliegue del ambiente.  
 
 Una vez el ambiente se encontraba provisionado, generar la automatización fue una tarea trivial. Ya en esta etapa se puede automatizar cualquier despliegue de infraestructura en cuestión de minutos. Se requiere simplemente generar un Job en Jenkins que responda al Webhook de Github cuando ocurra un commit en el branch que especifiquemos. El job va a trabajar sobre la lógica del Jenkinsfile configurado en el repositorio.
 
