@@ -2,7 +2,7 @@
 
 **Author:** Victor Ponce | **Contact:** [Linkedin](https://www.linkedin.com/in/victorhugoponce) | **Website:** [victorponce.com](https://victorponce.com)
 
-🇪🇸 **Versión en Español:** [README.es.md](https://github.com/victorhponcec/article-aws-devops-jenkins-prowler-ecr/blob/main/README.es.md)
+🇪🇸 **Versión en Español:** [README.es.md](https://github.com/victorhponcec/article-aws-devops-jenkins/blob/main/README.md)
 
 **Notes:** *The code for this project is in a private repository. Feel free to contact me if you want to access it.* 
 
